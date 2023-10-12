@@ -23,7 +23,7 @@ int main() {
     memset(plot_line,' ',term_width - 33);
     plot_line[term_width - 33] = '\0';
     for(x = 0; x < 100; x++) {
-        y = (sin(((x*7) * 3.14159)/180)/2 + 0.5);
+        y = (sin(((x*9) * 3.14159)/180)/2 + 0.5);
         previous_char = rationalise;
         rationalise = (term_width - 34) * y;
         if( x % 5 == 0){
