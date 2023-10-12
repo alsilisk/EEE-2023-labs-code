@@ -8,10 +8,11 @@
 #define RESET "\x1B[0m"
 
 #ifdef __linux__
+#include <sys/ioctl.h> 
     static inline int console_size() {
         struct winsize w;
         ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-        return w.ws_row;
+        return w.ws_col;
     }
 #elif defined(_WIN32)
     #include <windows.h>
