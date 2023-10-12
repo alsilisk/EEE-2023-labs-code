@@ -7,6 +7,9 @@
 #define WHT   "\x1B[37m"
 #define RESET "\x1B[0m"
 
+#define PI 3.14159f
+#define FREQ 2
+
 #ifdef __linux__
 #include <sys/ioctl.h> 
     static inline int console_size() {

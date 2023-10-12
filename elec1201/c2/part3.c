@@ -5,11 +5,10 @@
 #include <windows.h>
 #include "graphing_calc.h"
 
-void plotval(float y, unsigned long x, int tick_mark, char* plot_line, int previous_char, int column){
-    char* tickmark[] = {"---","   "};
+void plotval(float y, unsigned long x, char* plot_line, int previous_char, int column){
     plot_line[previous_char] = ' ';
     plot_line[column] = '*';
-    printf(CYN "x = %010d" RED ", " MAG "y = %03f" RED "|%s" YEL "%s\n" RESET, x, y, tickmark[tick_mark], plot_line);
+    printf("x = %010d, y = %03f |%s\n", x, y, plot_line);
 }
 
 
@@ -19,7 +18,6 @@ int main() {
     int rationalise = 0;
     int previous_char; 
     int term_width = console_size();
-    int tick_mark;
 
     char *plot_line = (char*)malloc(term_width-32);
     memset(plot_line,' ',term_width - 33);
@@ -28,11 +26,7 @@ int main() {
         y = (sin(((x*FREQ) * PI)/180)/2 + 0.5);
         previous_char = rationalise;
         rationalise = (term_width - 34) * y;
-        if( x % 5 == 0){
-            tick_mark = 0;
-        }
-        plotval(y, x, tick_mark, plot_line, previous_char, rationalise);
-        tick_mark = 1;
+        plotval(y, x, plot_line, previous_char, rationalise);
         x++;
     }
 }
