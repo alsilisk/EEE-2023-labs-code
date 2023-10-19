@@ -8,7 +8,7 @@
 #define RESET "\x1B[0m"
 
 #define PI 3.14159f
-#define FREQ 2
+#define FREQ 10
 
 #ifdef __linux__
 #include <sys/ioctl.h> 

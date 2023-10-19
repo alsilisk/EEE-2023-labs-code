@@ -25,7 +25,7 @@ int main() {
     memset(plot_line,' ',term_width - 33);
     plot_line[term_width - 33] = '\0';
     for(;;) {
-        y = (sin(((x*FREQ) * PI)/180)/2 + 0.5);
+        y = (sin(((x*12) * PI)/180)/2 + 0.5);
         previous_char = rationalise;
         rationalise = (term_width - 34) * y;
         if( x % 5 == 0){
